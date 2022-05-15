@@ -9,35 +9,19 @@ export const AuthenticateUser = axios.create({
   },
 });
 
-export const CreateTransaction = (jwtToken, data) => axios.create({
-  baseURL: "https://devapi.edelweissfin.com/payment/createTransaction",
+const config = {
   headers: {
     "Content-Type": "application/json",
-    "x-api-key": "0jTQWLYxbG1glicMoYsNq3JPLT8U4epS3uQ8nWwj",
-    "Authorization": jwtToken
-  },
-  data: {
-    "firstname": "DhirajKumar",
-    "email": "dhirajkumar.mishra@edelweissfin.com",
-    "businessCode": "100",
-    "productinfo": "SAU Admission 2020",
-    "phone":"9999999999",
-    "user_credentials":"8IpLLY:9999999999",
-    "redirect_url":"https://www.business_response_handling_page.com/",
-    "amount": 8.00,
-    // "isconsent": true,
-    "isconsent": false,
-    // "si_details": {
-    //     "billingAmount": "8.00",
-    //     "billingCurrency": "INR",
-    //     "billingCycle": "WEEKLY",
-    //     "billingInterval": 1,
-    //     "paymentStartDate": "2020-02-21",
-    //     "paymentEndDate": "2020-10-20"
-    // }
-    "si_details": null  // null is passed as we are not supporting recurring payment
-  },
-});
+    // "x-api-key": "0jTQWLYxbG1glicMoYsNq3JPLT8U4epS3uQ8nWwj",
+    "Authorization": "Basic Vm1DUnE6SGtKVml0LUp2",
+    "Access": "application/json"
+  }
+}
+
+export const CreateTransaction = async(data) => {
+  return axios.post(
+    "https://egiswitchpylon.infoaxon.com/gates/1.0/switch/createTransaction", data, config);  
+}
 
 // export const VerifyTransaction = (jwtToken, data) => axios.create({
 //   baseURL: "https://devapi.edelweissfin.com/payment/verifyTransaction",
