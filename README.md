@@ -72,4 +72,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- c1 -->
 <!-- c2 -->
 <!-- c3 -->
-<!-- c4 -->
