@@ -1,8 +1,8 @@
-import './PayuHome.css';
+import './App.css';
 import React, { useState } from 'react';
-import { AuthenticateUser, CreateTransaction } from './service/authenticateUser.service';
+import { AuthenticateUser, CreateTransaction } from './payUIntegration/service/authenticateUser.service';
 
-function PayuHome() {
+function App() {
   let [errorMsg1, setErrorMsg1] = useState('');
   let [errorMsg2, setErrorMsg2] = useState('');
 
@@ -59,7 +59,21 @@ function PayuHome() {
   }
 
   return (
-    <div className="App-payu">
+    <div className="App">
+      {/* <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header> */}
       <button onClick={createTransaction}>PayU Integration</button>
       <h1>{errorMsg1}</h1>
       <h1>{errorMsg2}</h1>
@@ -67,4 +81,4 @@ function PayuHome() {
   );
 }
 
-export default PayuHome;
+export default App;
